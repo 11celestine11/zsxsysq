@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "PingFang SC", "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", "Libre Baskerville", "Songti SC", serif;
+  
+  --color-primary: #5A5A40;
+  --color-bg-main: #f5f2ed;
+  --color-bg-body: #e8e6e1;
+  --color-text-main: #2c2c2c;
+  --color-text-sub: #7a7a7a;
+  --color-card: #ffffff;
+  --color-border: #e2e0db;
+}
+
+@layer base {
+  html, body, #root {
+    @apply h-full w-full overflow-hidden;
+  }
+
+  body {
+    @apply bg-[var(--color-bg-body)] flex items-center justify-center text-[var(--color-text-main)] antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/10 rounded-full hover:bg-primary/30 transition-colors;
+  }
+}
+
+.waterfall-container {
+  column-count: 2;
+  column-gap: 12px;
+}
+
+.story-content {
+  @apply font-serif;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-[var(--color-card)]/70 backdrop-blur-xl border border-white/30;
+}
+
+/* AO3 Style Tag */
+.ao3-tag {
+  @apply text-[11px] text-text-sub hover:text-primary transition-colors bg-bg-main px-2 py-0.5 rounded-sm border border-border/50 cursor-pointer;
+}
+
+/* Card Hover */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1;
+}
+

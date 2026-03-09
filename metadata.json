@@ -1,0 +1,7 @@
+{
+  "name": "芝士小说体",
+  "description": "一款淡雅ins风的同人文生成工具，支持多角色羁绊、世界书设定与AI润色功能。",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
