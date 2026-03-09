@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Settings, Save, Trash2, RefreshCw, Check, Palette, Code, Edit2, Download } from 'lucide-react';
+import { Settings, Save, Trash2, RefreshCw, Check, Palette, Code, Edit2 } from 'lucide-react';
 import Overlay from './Overlay';
 import { ApiSettings, ApiPreset, CssPreset } from '../types';
 
@@ -131,26 +131,6 @@ export default function SettingsOverlay({
       }
     >
       <div className="flex flex-col gap-6 pb-10">
-        {/* Offline Download */}
-        <div className="bg-card rounded-2xl p-5 shadow-sm border border-border/50">
-          <h3 className="text-sm font-semibold text-text-main mb-4 flex items-center gap-2">
-            <Download size={18} className="text-primary" /> 离线单文件版
-          </h3>
-          <div className="flex flex-col gap-2">
-            <p className="text-xs text-text-sub">
-              点击下方按钮，将当前应用（包含你配置的 API Key 和所有代码）打包为一个独立的 HTML 文件。下载后，你可以直接在电脑或手机浏览器中双击打开使用，无需任何环境依赖。
-            </p>
-            <button 
-              onClick={() => {
-                window.location.href = '/api/download-offline';
-              }}
-              className="mt-2 bg-primary text-white px-4 py-2.5 rounded-xl text-xs font-medium active:scale-95 transition-transform flex items-center justify-center gap-2"
-            >
-              <Download size={16} /> 下载离线版 (HTML)
-            </button>
-          </div>
-        </div>
-
         {/* API Configuration */}
         <div className="bg-card rounded-2xl p-5 shadow-sm border border-border/50">
           <h3 className="text-sm font-semibold text-text-main mb-4 flex items-center gap-2">
