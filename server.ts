@@ -15,10 +15,12 @@ async function startServer() {
   // Endpoint to trigger build and download
   app.get('/api/download-offline', (req, res) => {
     try {
-      console.log('Building offline version...');
-      // Run build synchronously
-      execSync('npx vite build', { stdio: 'inherit' });
       const filePath = path.resolve(__dirname, 'dist/index.html');
+      
+      if (!fs.existsSync(filePath)) {
+        console.log('Building offline version...');
+        execSync('npx vite build', { stdio: 'inherit' });
+      }
       
       if (fs.existsSync(filePath)) {
         res.download(filePath, 'zhishi-novel-offline.html');

@@ -1084,6 +1084,22 @@ ${targetText}
                 </label>
               </div>
             </div>
+
+            {/* Offline Version */}
+            <div className="px-6 flex flex-col gap-2">
+              <h4 className="text-[11px] font-bold text-text-sub uppercase tracking-widest mb-2 px-2">离线单文件版</h4>
+              <button 
+                onClick={() => {
+                  window.location.href = '/api/download-offline';
+                }}
+                className="w-full flex items-center justify-center gap-2 bg-primary text-white p-4 rounded-3xl text-sm font-bold hover:bg-primary/90 transition-all active:scale-95 shadow-lg shadow-primary/20"
+              >
+                <Download size={18} /> 下载离线版 (HTML)
+              </button>
+              <p className="text-[10px] text-text-sub text-center mt-1 px-4">
+                下载后无需网络环境，双击即可在任意设备上打开使用。
+              </p>
+            </div>
           </div>
         )}
       </div>
